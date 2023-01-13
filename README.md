@@ -2,7 +2,7 @@
 
 Just testing out some Python coding.
 
-## How to run
+## How to run
 
 - `python -m venv venv`
 - `source venv/bin/activate`
