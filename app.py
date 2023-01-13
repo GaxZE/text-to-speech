@@ -1,8 +1,6 @@
 from gtts import gTTS
 from io import BytesIO
-from pygame import mixer, time
-
-
+from pygame import mixer
 
 def speak(text):
     mp3_fp = BytesIO()
@@ -12,10 +10,11 @@ def speak(text):
 
 
 text = input("What would you like to say?: \n")
-mixer.init()
 sound = speak(text)
 # Set starting point for file.
 sound.seek(0)
+
+mixer.init()
 # Load sound in mixer.
 mixer.music.load(sound, "mp3")
 mixer.music.play()
