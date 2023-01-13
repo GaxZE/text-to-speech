@@ -1,7 +1,7 @@
 from gtts import gTTS
 from io import BytesIO
-from pygame import mixer
-import time
+from pygame import mixer, time
+
 
 
 def speak(text):
@@ -19,5 +19,6 @@ sound.seek(0)
 # Load sound in mixer.
 mixer.music.load(sound, "mp3")
 mixer.music.play()
-# time used to allow speech to run (5 seconds), will refactor
-time.sleep(5)
+# Lets wait for mixer to finish playing.
+while mixer.music.get_busy() == True:
+    continue
